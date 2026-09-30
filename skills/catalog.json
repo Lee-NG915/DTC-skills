@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "1.0.0",
+  "skills": [
+    {
+      "name": "dtc-atomic-decomposition",
+      "stage": "architecture",
+      "entrypoint": "dtc-atomic-decomposition/SKILL.md"
+    },
+    {
+      "name": "dtc-ci-monitor",
+      "stage": "ci",
+      "entrypoint": "dtc-ci-monitor/SKILL.md"
+    },
+    {
+      "name": "dtc-component-testing",
+      "stage": "verify",
+      "entrypoint": "dtc-component-testing/SKILL.md"
+    },
+    {
+      "name": "dtc-context",
+      "stage": "context",
+      "entrypoint": "dtc-context/SKILL.md"
+    },
+    {
+      "name": "dtc-data-tracking",
+      "stage": "cross-cutting",
+      "entrypoint": "dtc-data-tracking/SKILL.md"
+    },
+    {
+      "name": "dtc-delivery",
+      "stage": "release",
+      "entrypoint": "dtc-delivery/SKILL.md"
+    },
+    {
+      "name": "dtc-design-evidence",
+      "stage": "discovery",
+      "entrypoint": "dtc-design-evidence/SKILL.md"
+    },
+    {
+      "name": "dtc-evidence-log",
+      "stage": "record",
+      "entrypoint": "dtc-evidence-log/SKILL.md"
+    },
+    {
+      "name": "dtc-exception-handling",
+      "stage": "recovery",
+      "entrypoint": "dtc-exception-handling/SKILL.md"
+    },
+    {
+      "name": "dtc-implementation",
+      "stage": "build",
+      "entrypoint": "dtc-implementation/SKILL.md"
+    },
+    {
+      "name": "dtc-optimization",
+      "stage": "optimize",
+      "entrypoint": "dtc-optimization/SKILL.md"
+    },
+    {
+      "name": "dtc-page-decomposition",
+      "stage": "architecture",
+      "entrypoint": "dtc-page-decomposition/SKILL.md"
+    },
+    {
+      "name": "dtc-privacy-redaction",
+      "stage": "safety",
+      "entrypoint": "dtc-privacy-redaction/SKILL.md"
+    },
+    {
+      "name": "dtc-recording-analysis",
+      "stage": "publishing",
+      "entrypoint": "dtc-recording-analysis/SKILL.md"
+    },
+    {
+      "name": "dtc-requirements-analysis",
+      "stage": "discovery",
+      "entrypoint": "dtc-requirements-analysis/SKILL.md"
+    },
+    {
+      "name": "dtc-scoped-validation",
+      "stage": "verify",
+      "entrypoint": "dtc-scoped-validation/SKILL.md"
+    },
+    {
+      "name": "dtc-technical-design",
+      "stage": "design",
+      "entrypoint": "dtc-technical-design/SKILL.md"
+    },
+    {
+      "name": "dtc-ui-spec",
+      "stage": "discovery",
+      "entrypoint": "dtc-ui-spec/SKILL.md"
+    },
+    {
+      "name": "dtc-visual-validation",
+      "stage": "verify",
+      "entrypoint": "dtc-visual-validation/SKILL.md"
+    },
+    {
+      "name": "dtc-workflow-review",
+      "stage": "review",
+      "entrypoint": "dtc-workflow-review/SKILL.md"
+    }
+  ]
+}
