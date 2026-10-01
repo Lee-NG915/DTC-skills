@@ -12,6 +12,9 @@ DTC-skills/
 ├── .gitignore
 ├── schemas/
 │   └── skill.schema.json   # 本仓库扩展元数据契约
+├── targets/
+│   ├── README.md           # 目标项目适配档案契约
+│   └── <target>.md         # 项目技术栈、边界与验证能力
 ├── scripts/
 │   └── validate.rb         # 本地结构、引用及元数据一致性校验
 └── skills/
@@ -54,6 +57,16 @@ DTC-skills/
 ## 跨技术栈原则
 
 技能只规定问题边界、证据、输入输出和验收语义，不规定 React、Vue、Svelte、原生视图、服务端模板、CSS-in-JS 或某个构建器。`dtc-context/references/stack-adapter.md` 用项目实际能力映射组件输入、生命周期、预览、测试、构建和视觉对照。没有 DOM 时使用平台等价的布局/绘制/状态证据；没有 Storybook 时使用已有 preview/harness；没有自动化工具时保留可复现手工步骤和缺口。
+
+## 目标项目适配
+
+通用 skill 不复制到目标项目中。目标项目在根目录提供 `.dtc/target-profile.md`
+软链，指向本仓库 `targets/<target>.md`；DTC skills 通过 `dtc-context` 先读取档案，
+再把技术栈、领域边界、命令、预览能力和交付限制交给后续阶段。目标项目可以把
+适配档案作为本地分支的一部分修改，修改会直接作用于本地 DTC-skills 源文件。
+
+目标档案只描述能力和规则，不授予远端写入、发布、发消息或业务验收权限。目标项目
+自身的 Hard Rules 优先于档案；没有档案时保留通用流程并显式记录技术栈和命令未知。
 
 ## 如何组合
 

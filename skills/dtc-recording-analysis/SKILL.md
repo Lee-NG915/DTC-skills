@@ -5,6 +5,9 @@ description: 将一轮脱敏后的开发过程转成适合公开分享的录屏�
 
 # 录屏与公开分析
 
+先消费 `dtc-context` 输出的 `targetProfile`，使用目标项目真实的预览入口、技术术语和
+证据层级；不能把 E-pig 的本地 Storybook 或其他项目的平台交付写成通用上线事实。
+
 先读取 [dtc-privacy-redaction](../dtc-privacy-redaction/SKILL.md) 和 [dtc-evidence-log](../dtc-evidence-log/SKILL.md)。一段内容只讲一个真实问题，按“问题 → 证据 → 决策 → 实现 → 验证 → 边界”组织。
 
 先展示问题和结果，再展示最少的代码或配置片段。画面使用公开仓库、占位路径、合成数据和脱敏截图；隐藏地址栏、终端用户名、窗口通知、扩展、客户内容和内部链接。字幕注明证据层级，例如“本地浏览器通过，真实平台接收待验证”。
