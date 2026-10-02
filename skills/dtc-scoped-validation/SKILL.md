@@ -5,6 +5,10 @@ description: 依据实际改动与消费者选择验证层次和适用范围，�
 
 # 验证范围编排
 
+先消费 `dtc-context` 输出的 `targetProfile`，把目标项目的质量门、Storybook、构建和
+业务/发布边界映射到本轮范围。来源项目有而目标项目没有的验证层不能记为通过；应记录
+等价验证或未验证原因。
+
 本技能选择“检查哪些”，不替代 [组件测试](../dtc-component-testing/SKILL.md) 的执行，也不替代 [视觉验证](../dtc-visual-validation/SKILL.md) 的画面对照。
 
 | 改动 | 本轮检查 |
