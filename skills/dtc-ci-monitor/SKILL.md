@@ -17,3 +17,5 @@ description: 检查或跟进指定提交的 CI，定位失败并审阅自动修�
 授权修复后运行受影响检查，推送仅在当前授权涵盖时执行，并跟进新 attempt。未知原因、权限不足、重复失败或达到预算时停止重试并交接。CI 通过不代表可合并、业务验收或发布。
 
 失败恢复使用 [dtc-exception-handling](../dtc-exception-handling/SKILL.md)，将提交/attempt 与结果交给 [dtc-evidence-log](../dtc-evidence-log/SKILL.md)。
+
+如果使用 Nx Cloud，确认当前工具确实可读取该仓库 CI，再选择原生 API/CLI 或已提供的连接器；不存在工具时不虚构 MCP 名称，也不自动启用云服务。服务端 repair plan 的身份、状态和 diff 都须回读；空任务、无新 attempt 或检查缺失不是成功。此公开包没有原工程的轮询脚本或自动修复执行器。

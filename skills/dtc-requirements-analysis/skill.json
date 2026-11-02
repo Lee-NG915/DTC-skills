@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "name": "dtc-requirements-analysis",
-  "version": "1.0.0",
-  "description": "把想法、会议材料、缺陷或配置请求整理成范围清晰、可验收、可交接的需求记录。",
+  "version": "1.1.0",
+  "description": "将模糊想法、会议材料、变更请求和缺陷整理为可讨论、可验收、可交接的业务需求；不把建议或草稿伪装成确认。",
   "stage": "discovery",
   "inputs": [
     "context",
@@ -20,6 +20,8 @@
   "$schema": "../../schemas/skill.schema.json",
   "relatedSkills": [
     "dtc-context",
+    "dtc-design-evidence",
+    "dtc-implementation",
     "dtc-privacy-redaction"
   ]
 }

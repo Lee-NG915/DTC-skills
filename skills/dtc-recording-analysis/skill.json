@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "name": "dtc-recording-analysis",
-  "version": "1.0.0",
-  "description": "把脱敏后的真实开发证据整理成适合小红书等公开渠道的录屏、旁白、字幕和发布前检查。",
+  "version": "1.1.0",
+  "description": "将一轮脱敏后的开发过程转成适合公开分享的录屏和分析内容，清楚区分证据、判断、未知和上线边界。",
   "stage": "publishing",
   "inputs": [
     "dtc-privacy-redaction output",
@@ -19,7 +19,7 @@
   "entrypoint": "SKILL.md",
   "$schema": "../../schemas/skill.schema.json",
   "relatedSkills": [
-    "dtc-privacy-redaction",
-    "dtc-evidence-log"
+    "dtc-evidence-log",
+    "dtc-privacy-redaction"
   ]
 }

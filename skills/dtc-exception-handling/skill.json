@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "name": "dtc-exception-handling",
-  "version": "1.0.0",
-  "description": "处理目标不明、需求变化、证据缺失、动态数据异常、远端漂移、CI 失败、部分写入和紧急故障等特殊流程。",
+  "version": "1.1.0",
+  "description": "在目标、证据、依赖或远端状态不稳定时建立停止条件和恢复路径，避免用默认流程掩盖不确定性。",
   "stage": "recovery",
   "inputs": [
     "current context",
@@ -20,7 +20,7 @@
   "$schema": "../../schemas/skill.schema.json",
   "relatedSkills": [
     "dtc-context",
-    "dtc-privacy-redaction",
-    "dtc-evidence-log"
+    "dtc-evidence-log",
+    "dtc-privacy-redaction"
   ]
 }

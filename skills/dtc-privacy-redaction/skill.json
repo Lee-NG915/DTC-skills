@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "name": "dtc-privacy-redaction",
-  "version": "1.0.0",
-  "description": "在日志、截图、代码片段、录屏和公开示例进入分享仓库前擦除秘密、个人信息、内部定位和商业敏感信息。",
+  "version": "1.1.0",
+  "description": "在公开分享或跨环境交接前擦除凭据、客户数据、内部路径、业务身份和可关联元数据，同时保留开发推理所需的结构。",
   "stage": "safety",
   "inputs": [
     "原始素材",
@@ -17,5 +17,9 @@
   "privacy": "本 skill 默认不输出原始敏感内容",
   "entrypoint": "SKILL.md",
   "$schema": "../../schemas/skill.schema.json",
-  "relatedSkills": []
+  "relatedSkills": [
+    "dtc-evidence-log",
+    "dtc-recording-analysis",
+    "dtc-requirements-analysis"
+  ]
 }

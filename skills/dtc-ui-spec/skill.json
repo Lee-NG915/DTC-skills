@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "name": "dtc-ui-spec",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "在首次 UI 实现前将设计证据落成逐项参数、采用目标和断言；分开维护行为及输入契约，支持增量修改和跨栈单位映射。",
   "stage": "discovery",
   "inputs": [
@@ -16,10 +16,10 @@
     "未知与进入实施的范围"
   ],
   "relatedSkills": [
-    "dtc-design-evidence",
-    "dtc-page-decomposition",
     "dtc-atomic-decomposition",
+    "dtc-design-evidence",
     "dtc-implementation",
+    "dtc-page-decomposition",
     "dtc-visual-validation"
   ],
   "privacy": "真实源材料留在目标项目受控位置；公开内容先脱敏",

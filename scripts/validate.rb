@@ -45,6 +45,7 @@ begin
     data = JSON.parse((folder/'skill.json').read)
     validate(data, schema, "#{folder.basename}/skill.json")
     raise "#{folder}: identity mismatch" unless data['name'] == fm['name']
+    raise "#{folder}: description mismatch" unless data['description'] == fm['description']
     raise "#{folder}: missing schema" unless (folder/data['$schema']).file?
     data['relatedSkills'].each { |name| raise "#{folder}: unknown related skill #{name}" unless names.include?(name) }
   end
@@ -54,6 +55,13 @@ begin
   entries.each do |entry|
     data = JSON.parse((ROOT/'skills'/entry['name']/'skill.json').read)
     raise 'Catalog entry mismatch' unless entry['entrypoint'] == "#{entry['name']}/SKILL.md" && entry['stage'] == data['stage']
+  end
+  coverage = JSON.parse((ROOT/'docs/workflow-coverage.json').read).fetch('entries')
+  raise 'Duplicate coverage source' unless coverage.map { |e| e.fetch('source') }.uniq.size == coverage.size
+  coverage.each do |entry|
+    targets = entry.fetch('publicSkills')
+    raise 'Unmapped source skill' if targets.empty?
+    targets.each { |name| raise "Unknown public skill #{name}" unless names.include?(name) }
   end
   Dir.glob((ROOT/'**/*.md').to_s).each do |file|
     File.read(file).scan(/\]\(([^)]+)\)/).flatten.each do |url|

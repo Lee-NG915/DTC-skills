@@ -15,7 +15,9 @@ DTC-skills/
 ├── targets/
 │   ├── README.md           # 目标项目适配档案契约
 │   └── <target>.md         # 项目技术栈、边界与验证能力
+├── docs/                   # 覆盖关系与公开整理说明
 ├── scripts/
+│   ├── check_public.py      # 文本与身份泄露检查（不是安全证明）
 │   └── validate.rb         # 本地结构、引用及元数据一致性校验
 └── skills/
     ├── catalog.json        # 轻量索引
@@ -53,6 +55,9 @@ DTC-skills/
 | [dtc-scoped-validation](skills/dtc-scoped-validation/SKILL.md) | 根据真实 diff、消费者和失败代价选择最小可靠验证范围，分别记录逻辑、视觉、构建、远端和业务验收层级。 | validation plan、commands and results、untested scope、failure loop |
 | [dtc-workflow-review](skills/dtc-workflow-review/SKILL.md) | 在预览交接后或用户要求复盘时评估流程问题，区分执行遗漏、规则不足、需求变化与证据缺口，提出有边界的技能改进。 | 经验分类和置信度、改进建议与适用边界、后续观察条件 |
 | [dtc-optimization](skills/dtc-optimization/SKILL.md) | 基于测量优化组件性能、架构、可维护性和反馈回路。 | 优化假设、前后测量、回归结果、后续观察 |
+| [dtc-monorepo-workflow](skills/dtc-monorepo-workflow/SKILL.md) | 多应用归属、配置隔离、Nx 探索/生成/导入/包链接与构建候选 | 应用上下文、工程命令与隔离边界 |
+| [dtc-operations-review](skills/dtc-operations-review/SKILL.md) | 页面、需求、埋点、看板交付的业务可用性与口径检查 | 有证据的发现、最小修正与限定结论 |
+| [dtc-web-interface-audit](skills/dtc-web-interface-audit/SKILL.md) | 指定 Web 源码的语义、焦点、表单、响应式与媒体审计 | 定位到行的静态发现及运行验证缺口 |
 
 ## 跨技术栈原则
 
@@ -60,10 +65,9 @@ DTC-skills/
 
 ## 目标项目适配
 
-通用 skill 不复制到目标项目中。目标项目在根目录提供 `.dtc/target-profile.md`
-软链，指向本仓库 `targets/<target>.md`；DTC skills 通过 `dtc-context` 先读取档案，
-再把技术栈、领域边界、命令、预览能力和交付限制交给后续阶段。目标项目可以把
-适配档案作为本地分支的一部分修改，修改会直接作用于本地 DTC-skills 源文件。
+目标项目可在根目录提供 `.dtc/target-profile.md`，也可显式声明其他档案路径；
+本仓库提供 [合成档案例子](targets/web-app.example.md)，真实项目档案留在项目自己的受控目录。DTC skills 通过 `dtc-context` 先读取档案，
+再把技术栈、领域边界、命令、预览能力和交付限制交给后续阶段。不要向公开仓库提交真实商店、客户、内部资源身份或凭据。
 
 目标档案只描述能力和规则，不授予远端写入、发布、发消息或业务验收权限。目标项目
 自身的 Hard Rules 优先于档案；没有档案时保留通用流程并显式记录技术栈和命令未知。
@@ -83,14 +87,24 @@ DTC-skills/
 
 在支持技能的客户端中，将所需目录放入该客户端支持的技能位置，或让助手读取指定 `skills/<name>/SKILL.md`。客户端扫描目录的行为不同，不假设 clone 后自动安装。
 
+本仓库的部分技能还引用根级目标档案契约；推荐保留完整仓库目录，通过客户端支持的链接方式引用技能目录，避免移动后相对引用失效。
+
 单独使用一个技能时，只需提供它所需的已有输入；引用的协作技能未安装时说明缺口，不假装已调用。经常组合使用时一起安装相关目录，保持同级相对路径。纯 UI 工具、平台 CLI、真实部署权限由调用环境提供。
 
-新增其他场景时创建独立 `skills/<name>/`，添加必需入口和元数据，登记 catalog；不需要沿用 `dtc-` 前缀，也不预建空目录。共性语义放负责该环节的技能，平台特例放该技能的 references，并在入口注明何时读取；不新增主题同步、商家后台或单一框架专用流程到通用目录。版本变更同步 `skill.json`，关联索引只记录位置，避免重复维护依赖图。
+新增其他场景时创建独立 `skills/<name>/`，添加必需入口和元数据，登记 catalog；不需要沿用 `dtc-` 前缀，也不预建空目录。共性语义放负责该环节的技能，平台特例放该技能的 references，并在入口注明何时读取；Shopify、GTM/GA4 和 Nx 等平台规则仅放入按需读取的 references，不改变通用入口的跨栈边界。版本变更同步 `skill.json`，关联索引只记录位置，避免重复维护依赖图。
 
-运行 `ruby scripts/validate.rb` 检查结构、字段约束、目录/元数据命名、目录索引和相对链接；无需安装项目依赖。这是本仓库轻量校验，不替代完整 JSON Schema 引擎或真实任务行为验证。
+本地检查（Ruby 与 Python 3 标准库，无额外项目依赖）：
+
+```sh
+ruby scripts/validate.rb
+python3 -m unittest discover -s scripts -p 'test_*.py'
+python3 scripts/check_public.py
+```
+
+CI 运行同一组检查。结构校验不替代真实任务行为验证；公开扫描的覆盖、私有 deny-list 和最终导出检查见 [公开整理与维护](docs/publication.md)。
 
 ## 公开范围
 
 保留流程判断，移除真实店铺、客户资料、凭据、私有链接和业务案例身份。原始日志与录屏不进入分享仓库；录屏需检查画面、声音、字幕、缩略图与通知。秘密扫描不能证明全部内容安全，发布前仍需检查实际展示材料。
 
-当前是从开发实践抽象的第一版技能，尚未在其他项目完成端到端验证。仓库只提供技能指令和结构检查，没有复制某个项目的构建、上传、部署或 CI 自动修复执行器；这些由具体技术栈适配器提供。
+当前包含 23 个公开技能，覆盖关系见 [流程覆盖清单](docs/workflow-coverage.md)。公开版已完成结构、链接及脱敏检查，尚未在其他项目完成全部工作流的端到端验证。仓库只提供技能指令和结构检查，没有复制某个项目的构建、上传、部署或 CI 自动修复执行器；这些由具体技术栈适配器提供。

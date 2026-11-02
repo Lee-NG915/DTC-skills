@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "name": "dtc-component-testing",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "依据页面/原子组件契约落实参数、场景、交互和兼容测试；首次覆盖全部适用分支，增量变更按消费者裁剪。",
   "stage": "verify",
   "inputs": [
@@ -16,11 +16,11 @@
     "失败闭环及缺口"
   ],
   "relatedSkills": [
-    "dtc-ui-spec",
+    "dtc-evidence-log",
     "dtc-implementation",
-    "dtc-visual-validation",
     "dtc-scoped-validation",
-    "dtc-evidence-log"
+    "dtc-ui-spec",
+    "dtc-visual-validation"
   ],
   "privacy": "真实源材料留在目标项目受控位置；公开内容先脱敏",
   "entrypoint": "SKILL.md",

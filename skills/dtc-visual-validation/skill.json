@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "name": "dtc-visual-validation",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "对照采用的设计目标验证实际画面，控制平台/视口/内容/状态与字体素材，保留差异修复闭环；适用于 Web 和原生 UI。",
   "stage": "verify",
   "inputs": [
@@ -15,11 +15,11 @@
     "沿用依据或待验项"
   ],
   "relatedSkills": [
-    "dtc-ui-spec",
-    "dtc-implementation",
     "dtc-component-testing",
+    "dtc-evidence-log",
+    "dtc-implementation",
     "dtc-scoped-validation",
-    "dtc-evidence-log"
+    "dtc-ui-spec"
   ],
   "privacy": "真实源材料留在目标项目受控位置；公开内容先脱敏",
   "entrypoint": "SKILL.md",

@@ -16,3 +16,5 @@ description: 从当前源码生成可交付候选，核对构建身份、授权�
 写入前重新核对目标、基线、候选哈希、授权路径和并发漂移。发生变化就重建/重规划，不直接复用旧候选。保存可恢复的前置快照；写入使用隔离目录或平台提供的安全机制，不能把目标环境内容未经决定地回填源码。
 
 分别记录构建通过、候选生成、写入回执、回读一致、运行时功能、人工验收和正式发布。部分成功或回读不一致时不自动重传、不晋升基线、不宣称交付完成。交付完成后交给 [dtc-evidence-log](../dtc-evidence-log/SKILL.md)；CI 状态由 [dtc-ci-monitor](../dtc-ci-monitor/SKILL.md) 独立跟进。
+
+涉及编译或候选有效性时读取 [生产候选契约](references/production-candidate.md)。目标是 Shopify 时，再按当前请求选择 [Live 回填](references/shopify-live-sync.md) 或 [Draft 交付](references/shopify-draft.md)；平台细则不扩散成其他技术栈的要求。

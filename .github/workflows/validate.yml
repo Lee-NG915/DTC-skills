@@ -1,0 +1,19 @@
+name: Validate public skills
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate skill contracts and local references
+        run: ruby scripts/validate.rb
+      - name: Test publication checks
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
+      - name: Check public content
+        run: python3 scripts/check_public.py

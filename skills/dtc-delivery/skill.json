@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "name": "dtc-delivery",
-  "version": "1.0.0",
-  "description": "从当前源码生成候选，核对授权范围、目标身份、远端漂移、写入和回读，并把本地交付与业务发布分层记录。",
+  "version": "1.1.0",
+  "description": "从当前源码生成可交付候选，核对构建身份、授权范围、目标环境漂移、写入/回读和发布交接；适用于任意应用或部署平台。",
   "stage": "release",
   "inputs": [
     "context",
@@ -21,9 +21,10 @@
   "entrypoint": "SKILL.md",
   "$schema": "../../schemas/skill.schema.json",
   "relatedSkills": [
+    "dtc-ci-monitor",
     "dtc-context",
+    "dtc-evidence-log",
     "dtc-implementation",
-    "dtc-scoped-validation",
-    "dtc-evidence-log"
+    "dtc-scoped-validation"
   ]
 }

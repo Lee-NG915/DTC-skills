@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "1.0.0",
+  "catalogVersion": "1.1.0",
   "skills": [
     {
       "name": "dtc-atomic-decomposition",
@@ -53,6 +53,16 @@
       "entrypoint": "dtc-implementation/SKILL.md"
     },
     {
+      "name": "dtc-monorepo-workflow",
+      "stage": "context",
+      "entrypoint": "dtc-monorepo-workflow/SKILL.md"
+    },
+    {
+      "name": "dtc-operations-review",
+      "stage": "review",
+      "entrypoint": "dtc-operations-review/SKILL.md"
+    },
+    {
       "name": "dtc-optimization",
       "stage": "optimize",
       "entrypoint": "dtc-optimization/SKILL.md"
@@ -96,6 +106,11 @@
       "name": "dtc-visual-validation",
       "stage": "verify",
       "entrypoint": "dtc-visual-validation/SKILL.md"
+    },
+    {
+      "name": "dtc-web-interface-audit",
+      "stage": "verify",
+      "entrypoint": "dtc-web-interface-audit/SKILL.md"
     },
     {
       "name": "dtc-workflow-review",

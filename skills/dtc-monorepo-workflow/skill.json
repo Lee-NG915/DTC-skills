@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/skill.schema.json",
+  "schemaVersion": 1,
+  "name": "dtc-monorepo-workflow",
+  "version": "1.0.0",
+  "description": "在多应用仓库中解析任务归属、隔离配置与构建候选，并处理工作区探索、包链接、生成器、导入和受影响任务；不预设品牌、工具版本或远端权限。",
+  "stage": "context",
+  "inputs": [
+    "任务与目标仓库",
+    "应用/公共模块范围"
+  ],
+  "outputs": [
+    "各应用上下文",
+    "工程变更与构建证据",
+    "隔离及未验证边界"
+  ],
+  "relatedSkills": [
+    "dtc-context",
+    "dtc-delivery",
+    "dtc-scoped-validation"
+  ],
+  "privacy": "真实项目身份和证据留在目标项目；公开示例只使用合成数据",
+  "entrypoint": "SKILL.md"
+}

@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "sourceScope": "canonical root skills and active workspace tooling; frozen app snapshots excluded",
+  "entries": [
+    {
+      "source": "component-development-contract",
+      "publicSkills": [
+        "dtc-ui-spec",
+        "dtc-design-evidence",
+        "dtc-component-testing"
+      ],
+      "treatment": "curated-public-workflow"
+    },
+    {
+      "source": "figma-delivery-contract",
+      "publicSkills": [
+        "dtc-design-evidence"
+      ],
+      "treatment": "curated-public-workflow"
+    },
+    {
+      "source": "figma-design-spec",
+      "publicSkills": [
+        "dtc-design-evidence",
+        "dtc-ui-spec"
+      ],
+      "treatment": "curated-public-workflow"
+    },
+    {
+      "source": "monitor-ci",
+      "publicSkills": [
+        "dtc-ci-monitor"
+      ],
+      "treatment": "curated-public-workflow"
+    },
+    {
+      "source": "monorepo-app-context",
+      "publicSkills": [
+        "dtc-context",
+        "dtc-monorepo-workflow"
+      ],
+      "treatment": "curated-public-workflow"
+    },
+    {
+      "source": "operations-review",
+      "publicSkills": [
+        "dtc-operations-review"
+      ],
+      "treatment": "curated-public-workflow"
+    },
+    {
+      "source": "product-design-tech-spec",
+      "publicSkills": [
+        "dtc-technical-design"
+      ],
+      "treatment": "curated-public-workflow"
+    },
+    {
+      "source": "requirement-change-log",
+      "publicSkills": [
+        "dtc-evidence-log"
+      ],
+      "treatment": "curated-public-workflow"
+    },
+    {
+      "source": "requirements-analysis-agent",
+      "publicSkills": [
+        "dtc-requirements-analysis"
+      ],
+      "treatment": "curated-public-workflow"
+    },
+    {
+      "source": "shopify-draft-delivery",
+      "publicSkills": [
+        "dtc-delivery"
+      ],
+      "treatment": "curated-public-workflow"
+    },
+    {
+      "source": "shopify-live-theme-sync",
+      "publicSkills": [
+        "dtc-delivery"
+      ],
+      "treatment": "curated-public-workflow"
+    },
+    {
+      "source": "shopify-theme-design-development",
+      "publicSkills": [
+        "dtc-implementation",
+        "dtc-component-testing",
+        "dtc-visual-validation",
+        "dtc-scoped-validation"
+      ],
+      "treatment": "curated-public-workflow"
+    },
+    {
+      "source": "shopify-theme-self-iteration",
+      "publicSkills": [
+        "dtc-workflow-review"
+      ],
+      "treatment": "curated-public-workflow"
+    },
+    {
+      "source": "tracking-scene-workflow",
+      "publicSkills": [
+        "dtc-data-tracking"
+      ],
+      "treatment": "curated-public-workflow"
+    },
+    {
+      "source": "web-interface-audit",
+      "publicSkills": [
+        "dtc-web-interface-audit"
+      ],
+      "treatment": "curated-public-workflow"
+    },
+    {
+      "source": ".agents/skills/link-workspace-packages",
+      "publicSkills": [
+        "dtc-monorepo-workflow"
+      ],
+      "treatment": "capability-adapted-not-vendored"
+    },
+    {
+      "source": ".agents/skills/monitor-ci",
+      "publicSkills": [
+        "dtc-ci-monitor"
+      ],
+      "treatment": "generated-mirror-not-duplicated"
+    },
+    {
+      "source": ".agents/skills/nx-generate",
+      "publicSkills": [
+        "dtc-monorepo-workflow"
+      ],
+      "treatment": "capability-adapted-not-vendored"
+    },
+    {
+      "source": ".agents/skills/nx-import",
+      "publicSkills": [
+        "dtc-monorepo-workflow"
+      ],
+      "treatment": "capability-adapted-not-vendored"
+    },
+    {
+      "source": ".agents/skills/nx-plugins",
+      "publicSkills": [
+        "dtc-monorepo-workflow"
+      ],
+      "treatment": "capability-adapted-not-vendored"
+    },
+    {
+      "source": ".agents/skills/nx-run-tasks",
+      "publicSkills": [
+        "dtc-monorepo-workflow"
+      ],
+      "treatment": "capability-adapted-not-vendored"
+    },
+    {
+      "source": ".agents/skills/nx-workspace",
+      "publicSkills": [
+        "dtc-monorepo-workflow"
+      ],
+      "treatment": "capability-adapted-not-vendored"
+    }
+  ]
+}

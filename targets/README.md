@@ -41,3 +41,10 @@ and deployment remain separate results.
 The profile is intentionally a small, reviewable document. Put detailed
 framework instructions in the target project's own rules or in a dedicated
 skill; do not turn this directory into a second project handbook.
+
+## Public repository examples
+
+[web-app.example.md](web-app.example.md) is synthetic and contains no verified
+project commands. Store concrete profiles in the consuming project's controlled
+workspace. Do not commit store IDs, credentials, client names, internal hosts or
+personal paths to this public repository.
