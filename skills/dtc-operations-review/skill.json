@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/skill.schema.json",
+  "schemaVersion": 1,
+  "name": "dtc-operations-review",
+  "version": "1.0.0",
+  "description": "从业务使用者的真实决策审查需求、页面、埋点、看板和流程交付，核对对象、统计口径、证据与维护成本；不代替开发测试或业务签收。",
+  "stage": "review",
+  "inputs": [
+    "需求/候选与证据",
+    "实际业务任务"
+  ],
+  "outputs": [
+    "有依据的发现",
+    "最小修正与验收条件",
+    "分层结论"
+  ],
+  "relatedSkills": [
+    "dtc-data-tracking",
+    "dtc-evidence-log",
+    "dtc-requirements-analysis"
+  ],
+  "privacy": "真实项目身份和证据留在目标项目；公开示例只使用合成数据",
+  "entrypoint": "SKILL.md"
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/skill.schema.json",
+  "schemaVersion": 1,
+  "name": "dtc-web-interface-audit",
+  "version": "1.0.0",
+  "description": "对指定 Web 源码执行可追溯的静态 UI 审计，检查语义、键盘焦点、表单、响应式、媒体和交互问题，并单列需要运行验证的结论。",
+  "stage": "verify",
+  "inputs": [
+    "明确源码或 diff",
+    "项目约束"
+  ],
+  "outputs": [
+    "定位到行的发现",
+    "运行验证缺口",
+    "审计范围和版本"
+  ],
+  "relatedSkills": [
+    "dtc-component-testing",
+    "dtc-context",
+    "dtc-implementation"
+  ],
+  "privacy": "真实项目身份和证据留在目标项目；公开示例只使用合成数据",
+  "entrypoint": "SKILL.md"
+}

@@ -16,3 +16,5 @@ description: 将需求和设计证据转成组件边界、数据接口、配置�
 产出一份技术契约：职责与非目标、输入输出、数据来源/回退、状态/异常、可编辑配置、响应式与素材边界、生产加载链、迁移与撤回、回归范围。设计原值、实现映射、待确认建议分开。整图方案不承诺图内文字独立编辑。
 
 由 [dtc-design-evidence](../dtc-design-evidence/SKILL.md) 补充必要来源证据；把已决定和待决定范围交给 [dtc-implementation](../dtc-implementation/SKILL.md)。文档授权不自动授予实施、远端写入或发布权限。
+
+公共模块设计不套产品 PRD 或 Figma 模板；说明接口、数据流、依赖方向、配置归属、失败边界及验证。涉及共享行为、购买对象、配置迁移或交付范围的实质变动时，使用 [有边界的独立审查](../dtc-scoped-validation/references/independent-review.md)。

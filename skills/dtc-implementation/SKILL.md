@@ -34,3 +34,5 @@ patch 交付。不要把来源项目的 Liquid section、Theme Editor schema、�
 已稳定复现的逻辑缺陷优先取得目标规则的修复前失败再改；实现已完成不得补造 RED。纯样式无需新增逻辑单测。涉及优化使用 [优化流程](../dtc-optimization/SKILL.md)，不把修复原契约偏差和新增优化混为一谈。
 
 交接给 [通用交付](../dtc-delivery/SKILL.md)，代码、预览、实际运行与用户接受分别记录。
+
+目标为 Shopify Theme/Liquid 时读取 [主题组件适配](references/shopify-theme.md)。业务方需要使用或据此决策的交付，可按实际风险使用 [运营 Review](../dtc-operations-review/SKILL.md)，不把它变成局部样式修改的固定审批。

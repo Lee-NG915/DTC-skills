@@ -18,3 +18,5 @@ description: 处理 DTC/Web 的埋点、许可、数据映射和监控变更；�
 输出事件/字段/映射变化、测试范围、真实接收缺口和待业务验收项，交给 [dtc-evidence-log](../dtc-evidence-log/SKILL.md)。
 
 同步维护场景到事件/字段/下游映射和测试范围登记；事件修改反查所有引用场景。不能把独立业务事件强行组成必经漏斗。生产输入变化时重建，真实接收与处理后报表覆盖分别验收。
+
+详细场景方案、AI 验收与交付层级读取 [场景契约](references/scene-contract.md)。只有涉及 GTM/GA4 时读取 [平台配置与既有配置保护](references/gtm-ga4.md)。业务可读性与口径使用 [运营 Review](../dtc-operations-review/SKILL.md)。这些是执行时的工作规则，本包没有配置执行器或后台监听器。

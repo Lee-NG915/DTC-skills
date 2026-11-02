@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "name": "dtc-technical-design",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "将需求和设计证据转成组件边界、数据接口、配置兼容、生产构建与验证方案；用于实现前评估，不自动写业务代码。",
   "stage": "design",
   "inputs": [
@@ -15,12 +15,12 @@
     "验证范围"
   ],
   "relatedSkills": [
+    "dtc-atomic-decomposition",
     "dtc-context",
-    "dtc-requirements-analysis",
     "dtc-design-evidence",
     "dtc-implementation",
     "dtc-page-decomposition",
-    "dtc-atomic-decomposition",
+    "dtc-requirements-analysis",
     "dtc-ui-spec"
   ],
   "privacy": "公开输出仅保留脱敏证据",

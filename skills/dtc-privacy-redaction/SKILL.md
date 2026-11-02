@@ -15,3 +15,7 @@ description: 在公开分享或跨环境交接前擦除凭据、客户数据、�
 导出前检查地址栏、终端提示符、窗口标题、通知、剪贴板预览、调试 payload 和字幕。清理后重新检查文本和画面，记录删除/泛化的类别；原始文件留在受控位置，不复制到分享仓库。
 
 完成后将脱敏素材交给 [dtc-requirements-analysis](../dtc-requirements-analysis/SKILL.md)、[dtc-evidence-log](../dtc-evidence-log/SKILL.md) 或 [dtc-recording-analysis](../dtc-recording-analysis/SKILL.md)。
+
+公开 skill 包还需检查文件名、路径、frontmatter、元数据、脚本、fixture、链接和引用闭包。移除历史授权、内部固定执行器及已通过状态；只有当前目标确实提供的能力才能进入执行计划。全仓检查方法见 [公开整理与维护](../../docs/publication.md)，不要将私有匹配词本身提交为脱敏报告。
+
+本仓库的 `scripts/check_public.py` 只覆盖文本模式和明确 deny-list；不证明全部商业信息、版权、截图或语义均已安全。推送前检查实际导出树和 staged diff；已经存在于公开历史的内容不能靠删除当前文件声称已擦除。

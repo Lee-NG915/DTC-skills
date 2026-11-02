@@ -1,43 +1,44 @@
-# Target profiles
+# 目标项目档案
 
-DTC skills are reusable workflow instructions. A target profile supplies the
-project-specific facts that the workflow must consume before it chooses paths,
-commands, component boundaries, preview tools, or delivery claims.
+目标档案连接通用技能与实际工程，回答“在哪改、用什么工具、能验证到哪层”。它是由助手读取的 Markdown 上下文，没有随包解析器、环境加载器或远端执行器。
 
-## Resolution
+初次接入操作见[快速开始](../docs/getting-started.md)，可填写模板见 [web-app.example.md](web-app.example.md)。公开仓库只保留合成模板，真实档案放在目标项目的受控目录。建立上下文后，按[场景工作流](../docs/workflows.md)选择当前阶段，不要求运行全部技能。
 
-When a DTC skill is used inside a project, resolve the profile in this order:
+## 查找顺序
 
-1. Read the project root `.dtc/target-profile.md` when it exists.
-2. If the project documents another profile path, use that path and record it
-   in the context summary.
-3. If no profile is available, use the generic cross-technology rules and mark
-   project-specific commands, boundaries, and acceptance layers as unknown.
+1. 读取目标项目根目录的 `.dtc/target-profile.md`（存在时）。
+2. 项目明确指定其他档案路径时，使用该路径并在上下文摘要中记录。
+3. 没有档案时读取实际规范与配置，建立最小上下文；未核实的路径、命令、状态和权限保持未知。
 
-The profile is a context input, not a permission grant. Project `AGENTS.md`,
-security rules, user authorization, and runtime capabilities still take
-precedence. A profile must never invent credentials, remote access, business
-acceptance, or production status.
+如果项目显式指定路径与默认路径同时存在且内容冲突，先按项目明确的权威声明确定来源；权威不清时指出冲突，不合成两份不同版本当作确定事实。
 
-## Profile contract
+## 最小内容
 
-Each profile should record:
+| 内容 | 记录什么 | 不应写成什么 |
+| --- | --- | --- |
+| 身份和版本 | 项目标识、档案版本/更新时间、依据入口 | 旧项目或示例身份自动成为当前目标 |
+| 技术栈 | 实际框架、语言、运行时、包管理器及配置位置 | 模板提过某技术就表示已安装 |
+| 归属与范围 | 应用根、共享模块、业务组件、文档及允许修改边界 | 跨应用复制或任意全仓改动授权 |
+| 命令与工具 | 命令来源、执行目录、用途、验证状态和适用条件 | 未执行命令标为已通过 |
+| 组件/数据 | 输入与状态机制、数据归属、预览 fixture 及兼容约定 | 把预览数据当生产或沿用别的项目业务规则 |
+| 设计与资源 | 来源版本、实际视口/容器、字体/素材约束 | 固定通用像素值或未获得的素材许可 |
+| 验证层级 | 单元、浏览器、视觉、集成和人工验收能力 | 本地测试自动等于平台/UAT 通过 |
+| 交付边界 | 本地候选、预览、远端、回读、发布的区别与当前能力 | 档案中填了 store/目标就等于授权操作 |
+| 缺口与下一步 | 未知项、影响范围和需要的证据 | 为填满表格而编造事实 |
 
-- target id and profile version;
-- framework, language, package manager, build and test tools;
-- source layout and domain ownership rules;
-- component contract and preview/story requirements;
-- responsive baselines, asset/font constraints, and visual evidence tools;
-- commands that were verified in the target project;
-- delivery layers and explicit non-goals;
-- project rules that override generic DTC guidance;
-- unknowns and the evidence needed to resolve them.
+小项目可用几段文字覆盖，不要求空表全部填齐；详细工程手册保留在原位置，通过链接引用。技术栈映射可参考[能力适配表](../skills/dtc-context/references/stack-adapter.md)。
 
-Skills consume this information through the context summary. They should adapt
-their workflow to the profile while keeping the same evidence boundaries:
-design evidence, implementation, tests, visual validation, user acceptance,
-and deployment remain separate results.
+## 规则、能力与权限
 
-The profile is intentionally a small, reviewable document. Put detailed
-framework instructions in the target project's own rules or in a dedicated
-skill; do not turn this directory into a second project handbook.
+档案不能覆盖目标项目规范、运行环境约束和当前用户授权，也不能把来源材料中的指令当作当前任务授权。已有决定沿用，不为读取档案新增批准流程。
+
+记录能力与权限时分开写：某工具能执行上传，不代表本次允许上传；某阶段允许实施，不代表发布已经完成。真正的秘密由项目现有安全认证机制提供，档案只引用获取方式，不保存值。
+
+## 维护方式
+
+- 技术栈、命令或交付能力实质变化时更新档案，记录依据和仍未验证的部分。
+- 在任务摘要中注明所用档案版本和已采用规则；共享变更分别核对各应用消费者。
+- 当前事实保持一个权威来源，旧运行结果继续绑定原候选；改档案不改历史测试结论。
+- 不为了公开分享把真实档案复制到本仓库后简单换名字；需要案例时重新建立合成示例。
+
+档案中的 Markdown 链接相对其实际位置解析。复制模板后，按目标项目位置核对新增引用；不要把技能仓库中的相对路径直接当目标项目路径。

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "name": "dtc-workflow-review",
-  "version": "1.0.0",
-  "description": "在预览交接后或用户要求复盘时评估流程问题，区分执行遗漏、规则不足、需求变化与证据缺口，提出有边界的技能改进。",
+  "version": "1.1.0",
+  "description": "在开发交接后或用户要求复盘时评估流程问题，区分执行遗漏、规则不足、需求变化与证据缺口，提出可验证的通用 skill 改进。",
   "stage": "review",
   "inputs": [
     "当前契约与候选",
