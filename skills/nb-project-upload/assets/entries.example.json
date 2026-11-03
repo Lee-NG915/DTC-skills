@@ -1,0 +1,14 @@
+[
+  {
+    "name": "example-org/sample-tool",
+    "url": "https://github.com/example-org/sample-tool",
+    "domain": "devtools",
+    "sub": "cli",
+    "one_liner": "合成示例：将文本清单转换为结构化任务的命令行工具。",
+    "highlights": "仅用于说明字段结构；没有验证该仓库存在。",
+    "public": {
+      "scenario": "合成示例：适合需要批量整理文本任务清单的开发者。"
+    },
+    "tags": ["devtools", "cli"]
+  }
+]
