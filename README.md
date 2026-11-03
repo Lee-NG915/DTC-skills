@@ -2,7 +2,7 @@
 
 面向 DTC（Direct-to-Consumer，直接面向消费者）与 Web 项目的 AI 开发技能库。将需求、设计取证、组件实现、验证、交付和复盘整理为可按需组合的工作方法，帮助助手理解项目边界、形成可审阅产物，并准确说明做到了哪一步。
 
-当前包含 **23 个技能**。核心流程不绑定某个品牌、框架或商店；Shopify、Figma、Nx、GTM/GA4 的具体规则放在相应技能的参考资料中，按目标项目实际能力使用。
+当前包含 **24 个技能**。核心流程不绑定某个品牌、框架或商店；Shopify、Figma、Nx、GTM/GA4 的具体规则放在相应技能的参考资料中，按目标项目实际能力使用。
 
 ## 从这里开始
 
@@ -29,7 +29,7 @@
 
 产物写入实际目标项目，复用已有需求与文档；只有通用技能、合成示例和仓库维护资料进入本仓库。小改动只补相关内容，不要求每次创建整套文档。
 
-本仓库提供技能指令、参考资料、模板和仓库校验脚本。AI 客户端、设计/浏览器工具、构建系统、平台账号及权限由使用环境提供；没有随包的自动调度器、部署器、主题合并引擎或分析平台配置执行器。
+本仓库提供技能指令、参考资料、模板、仓库校验脚本，以及按需使用的 nb-project 收录客户端。AI 客户端、设计/浏览器工具、构建系统、平台账号及权限由使用环境提供；没有随包的自动调度器、部署器、主题合并引擎或分析平台配置执行器。
 
 ## 快速体验
 
@@ -107,6 +107,7 @@ flowchart TD
 | [dtc-operations-review](skills/dtc-operations-review/SKILL.md) | 检查交付物能否支持约定业务任务 | 口径、可用性和维护成本发现 |
 | [dtc-delivery](skills/dtc-delivery/SKILL.md) | 准备候选或执行已授权交付 | 候选身份、差异计划、回读与交接 |
 | [dtc-ci-monitor](skills/dtc-ci-monitor/SKILL.md) | 查询或有界跟进指定提交 CI | 对应提交/attempt 的实际状态 |
+| [nb-project-upload](skills/nb-project-upload/SKILL.md) | 上传 GitHub 项目或整理多来源候选草稿 | 分类条目、预检、新增/草稿与回读回执 |
 
 ### 贯穿记录与公开分享
 
@@ -125,7 +126,7 @@ DTC-skills/
 ├── README.md                   # 项目总览与技能选择
 ├── CONTRIBUTING.md             # 新增、修改、校验与 PR 约定
 ├── LICENSE                     # MIT
-├── .env.example                # 当前无必需变量，不自动加载
+├── .env.example                # 可选收录客户端配置，不自动加载
 ├── docs/
 │   ├── getting-started.md       # 下载、加载、接入、首次任务与排障
 │   ├── workflows.md             # 场景组合、请求示例与交付判断
@@ -161,7 +162,7 @@ DTC-skills/
 
 ## 校验与维护
 
-使用技能指令本身不需要安装 Node 依赖或配置环境变量。运行本仓库检查需要 Ruby 与 Python 3；Git 用于版本和导出检查。
+使用技能指令本身不需要安装 Node 依赖。`nb-project-upload` 的上传脚本需 Python 3、目标站 origin 与专用收录凭证，见[使用入口](skills/nb-project-upload/SKILL.md)；其他工作流沿用目标工具的认证。运行本仓库检查需要 Ruby 与 Python 3；Git 用于版本和导出检查。
 
 ```sh
 ruby scripts/validate.rb

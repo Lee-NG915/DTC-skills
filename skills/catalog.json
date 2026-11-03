@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "1.1.0",
+  "catalogVersion": "1.2.0",
   "skills": [
     {
       "name": "dtc-atomic-decomposition",
@@ -116,6 +116,11 @@
       "name": "dtc-workflow-review",
       "stage": "review",
       "entrypoint": "dtc-workflow-review/SKILL.md"
+    },
+    {
+      "name": "nb-project-upload",
+      "stage": "catalog",
+      "entrypoint": "nb-project-upload/SKILL.md"
     }
   ]
 }

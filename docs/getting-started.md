@@ -118,3 +118,17 @@ fi
 | 为什么仍有待验收？ | 本地结果不能证明真实平台、业务签收或发布；查交付记录中具体缺失层级。 |
 | 能自动发布商店、GTM 或生产应用吗？ | 技能包不提供这类执行器。调用环境须提供能力，具体目标和操作沿用当前授权。 |
 | 项目规范与模板不同？ | 使用项目实际规范及当前决定；档案只记事实，不授予权限或覆盖项目边界。 |
+
+## 可选：从任意工作区收录 GitHub 项目
+
+[nb-project-upload](../skills/nb-project-upload/SKILL.md) 自包含，可单独复制整个技能目录；它不要求 nb-project 源码或 `.dtc/target-profile.md`。上传只需 Python 3 标准库，目标站已部署受保护收录 API，并在当前进程安全配置 `NB_PROJECT_URL` 与 `NB_PROJECT_INGEST_TOKEN`。示例变量见 [.env.example](../.env.example)，脚本不会自动读取该文件。
+
+```text
+请读取 <DTC_SKILLS_ROOT>/skills/nb-project-upload/SKILL.md。
+将我提供的 GitHub 项目整理为分类条目并收录到 NB_PROJECT_URL 对应的站点，
+凭证使用环境中的 NB_PROJECT_INGEST_TOKEN。先预检，再执行新增并回读。
+已有条目保持原文案，分别报告新增、已存在和未确认的结果。
+项目清单：<填写实际 GitHub 仓库 URL>
+```
+
+只想整理时明确写“只输出条目 JSON，不上传”；只想核对时写“只执行 dry-run”。接口未部署、凭证缺失或写入结果未知时，按技能的停止条件处理；本地测试通过不能证明目标站已上线。

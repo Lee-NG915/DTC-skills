@@ -1,0 +1,4 @@
+interface:
+  display_name: "nb-project 项目收录"
+  short_description: "通过受保护 API 上传项目或整理多来源候选草稿，无需本地源码"
+  default_prompt: "使用 $nb-project-upload，将我提供的 GitHub 项目整理后收录到已配置的目标站，并报告回读结果。"

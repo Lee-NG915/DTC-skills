@@ -1,0 +1,25 @@
+{
+  "$schema": "../../schemas/skill.schema.json",
+  "schemaVersion": 1,
+  "name": "nb-project-upload",
+  "version": "1.1.0",
+  "description": "将用户指定的 GitHub 项目整理上传，或读取多来源候选并生成有证据的中文草稿，保存后交管理员审核；通过专用收录凭证操作，无需本地 nb-project 源码。",
+  "stage": "catalog",
+  "entrypoint": "SKILL.md",
+  "privacy": "收录凭证只读环境或受控密钥源；输出不包含凭据、原始服务器错误或内部项目资料",
+  "inputs": [
+    "target site origin",
+    "dedicated ingest credential via environment",
+    "GitHub repository URLs or curated entry JSON",
+    "current upload authorization",
+    "discovery candidate ID and versioned editorial draft"
+  ],
+  "outputs": [
+    "validated entry batch",
+    "preflight result",
+    "insert and readback receipt",
+    "unconfirmed or failed batches",
+    "saved candidate draft and readback receipt (not published)"
+  ],
+  "relatedSkills": []
+}
